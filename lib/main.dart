@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,6 +60,17 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
     });
+
+  }
+  final myController = TextEditingController();
+
+  void dupa() {
+    myController.dispose();
+    super.dispose();
+    int pwyj; // z inputu przebieg wyjazdu
+    int pnm; // z inputu przebieg na miejscu
+    int ppw; // z inputu przebieg po powrocie
+
   }
 
 
@@ -71,10 +83,14 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+
+
+
+
     return Scaffold(
       appBar: AppBar(
         // Text
-
+        backgroundColor: Colors.amberAccent,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
@@ -98,21 +114,24 @@ class _MyHomePageState extends State<MyHomePage> {
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-         //   Image.asset(
-         //     'assets/images/dziobak.jpeg',
-          //  ),
-            const TextField(
+          children: const <Widget>[
+
+
+            TextField(
+              keyboardType: TextInputType.number,
+
                decoration: InputDecoration(
                  border: OutlineInputBorder(),
                  labelText: 'Przebieg wyjazdu',
-                 hintText: 'Przebieg przed wyjechaniem w delegację'
+                 hintText: 'Przebieg przed wyjechaniem w delegację',
                ),
             ),
             Padding(
               padding: EdgeInsets.only(bottom: 5.0)
             ),
-            const TextField(
+            TextField(
+              keyboardType: TextInputType.number,
+
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: 'Przebieg na miejscu',
@@ -122,25 +141,17 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
                 padding: EdgeInsets.only(bottom: 5.0)
             ),
-            const TextField(
+            TextField(
+              keyboardType: TextInputType.number,
+
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Przebieg po powrocie',
                   hintText: 'Przebieg po powrocie z delegacji'
+
+
               ),
             ),
-
-       //     const Text(
-       //       'Oto dziobak!'
-       //     ),
-        //    const Text(
-        //      'Tyle razy nacisłeś przycisk:',
-         //   ),
-         //   Text(
-        //      '$_counter',
-        //      style: Theme.of(context).textTheme.headline4,
-        //    ),
-
 
 
           ],
